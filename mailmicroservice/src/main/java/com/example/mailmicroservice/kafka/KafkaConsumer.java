@@ -62,7 +62,7 @@ public class KafkaConsumer {
 
         MailEntity mailEntity = MailEntity.builder().toAddress(record.value())
                         .topic("Подписка Rutube").message(user.getFirstname()
-                                + "Ваша подписка на Rutube была продлена до: "
+                                + ", Ваша подписка на Rutube была продлена до: "
                         + user.getSubscriptionEndDate()).build();
 
         System.out.println("Пришло сообщение: " + record.value());
