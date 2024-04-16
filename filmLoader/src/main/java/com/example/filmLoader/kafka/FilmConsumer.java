@@ -12,7 +12,7 @@ public class FilmConsumer {
 
     private final FilmService filmService;
 
-    @KafkaListener(topics = "del_film", groupId = "film_conumer")
+    @KafkaListener(topics = "del_film", groupId = "film_consumer")
     public void listener1(ConsumerRecord<Long, String> record){
         System.out.println("Пришло сообщение: " + record.key() + " " + record.value());
         filmService.delete(record.value());

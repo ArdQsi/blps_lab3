@@ -25,6 +25,8 @@ import org.springframework.transaction.annotation.Transactional;
 
 
 import java.sql.Timestamp;
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 import java.util.Calendar;
 import java.util.Objects;
 import java.util.Optional;
@@ -78,6 +80,22 @@ public class UserService {
             user.getUserFilm().add(film);
             userRepository.save(user);
             userXmlRepository.save(user);
+        }
+    }
+
+    public void automaticDebitingOfMoney() {
+        final var subscriptions = userRepository.findAll();
+        for (var subscription : subscriptions){
+            try {
+                DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss.SSS");
+                LocalDate endDate = LocalDate.parse(subscription.getSubscriptionEndDate(), formatter);
+                LocalDate currentDate = LocalDate.now();
+                if (currentDate.isEqual(endDate)) {
+                    updateSubscription(subscription.getId());
+                }
+            } catch(Exception e) {
+                e.printStackTrace();
+            }
         }
     }
 

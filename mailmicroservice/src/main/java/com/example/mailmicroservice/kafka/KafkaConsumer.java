@@ -18,7 +18,7 @@ public class KafkaConsumer {
     private final EmailService emailService;
     private final UserRepository userRepository;
 
-    @KafkaListener(topics = "balance_mail", groupId = "mail_conumer")
+    @KafkaListener(topics = "balance_mail", groupId = "mail_consumer")
     public void listener1(ConsumerRecord<Long, String> record){
 
         UserEntity user = userRepository.findUserById(record.key());
@@ -37,7 +37,7 @@ public class KafkaConsumer {
         }
     }
 
-    @KafkaListener(topics = "reg_mail", groupId = "mail_conumer")
+    @KafkaListener(topics = "reg_mail", groupId = "mail_consumer")
     public void listener2(ConsumerRecord<Long, String> record){
 
         UserEntity user = userRepository.findUserById(record.key());
@@ -55,7 +55,7 @@ public class KafkaConsumer {
         }
     }
 
-    @KafkaListener(topics = "update_sub_mail", groupId = "mail_conumer")
+    @KafkaListener(topics = "update_sub_mail", groupId = "mail_consumer")
     public void listener3(ConsumerRecord<Long, String> record){
 
         UserEntity user = userRepository.findUserById(record.key());

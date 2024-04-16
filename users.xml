@@ -1,0 +1,53 @@
+<users>
+  <user>
+    <id>1</id>
+    <firstname>Gnom</firstname>
+    <lastname>Kek</lastname>
+    <balance>3700</balance>
+    <email>romankravetsden@mail.ru</email>
+    <subscriptionEndDate>2024-05-17 01:43:22.482</subscriptionEndDate>
+    <password>$2a$10$OgRMqjFmXBqKIUfIqX7MP.gUNkA3UvmZrmW7xZek.e059hgBjc5Aq</password>
+    <role>ROLE_USER</role>
+    <cards class="org.hibernate.collection.spi.PersistentSet">
+      <isTempSession>false</isTempSession>
+      <initialized>true</initialized>
+      <owner class="user" reference="../.."/>
+      <cachedSize>-1</cachedSize>
+      <role>com.webapp.model.UserEntity.cards</role>
+      <key class="long">1</key>
+      <dirty>false</dirty>
+      <elementRemoved>false</elementRemoved>
+      <storedSnapshot class="map">
+        <entry>
+          <com.webapp.model.CardEntity>
+            <id>1</id>
+            <number>1111222233335555</number>
+            <month>7</month>
+            <year>2028</year>
+            <name>DENIS</name>
+            <surname>ROMANOV</surname>
+            <user reference="../../../../.."/>
+          </com.webapp.model.CardEntity>
+          <com.webapp.model.CardEntity reference="../com.webapp.model.CardEntity"/>
+        </entry>
+      </storedSnapshot>
+      <allowLoadOutsideTransaction>false</allowLoadOutsideTransaction>
+      <set>
+        <com.webapp.model.CardEntity reference="../../storedSnapshot/entry/com.webapp.model.CardEntity"/>
+      </set>
+    </cards>
+    <userFilm class="org.hibernate.collection.spi.PersistentSet">
+      <isTempSession>false</isTempSession>
+      <initialized>true</initialized>
+      <owner class="user" reference="../.."/>
+      <cachedSize>-1</cachedSize>
+      <role>com.webapp.model.UserEntity.userFilm</role>
+      <key class="long">1</key>
+      <dirty>false</dirty>
+      <elementRemoved>false</elementRemoved>
+      <storedSnapshot class="map"/>
+      <allowLoadOutsideTransaction>false</allowLoadOutsideTransaction>
+      <set/>
+    </userFilm>
+  </user>
+</users>
